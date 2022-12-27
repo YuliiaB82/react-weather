@@ -27,7 +27,7 @@ export default function App() {
       <small>
         {" "}
         <a
-          href="https://github.com/YuliiaB82/weather-app"
+          href="https://github.com/YuliiaB82/react-weather"
           target="blank"
           style={{ textDecoration: "none" }}
         >
