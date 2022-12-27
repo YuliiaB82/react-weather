@@ -32,7 +32,11 @@ export default function Weather() {
             </div>
           </div>
           <div className="col">
-            <img src={fakeData.img} className="fa-solid fa-sun" />
+            <img
+              src={fakeData.img}
+              className="fa-solid fa-sun"
+              alt="weatherIcon"
+            />
           </div>
         </div>
       </form>
