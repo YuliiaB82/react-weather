@@ -1,0 +1,106 @@
+body {
+  background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+h1,
+h2,
+h3 {
+  margin-left: 10px;
+  text-shadow: 1px 1px white;
+}
+
+h2,
+h3,
+#source {
+  color: #46709b;
+}
+
+span {
+  text-align: center;
+  text-shadow: 1px 1px white;
+}
+
+.temp-today {
+  font-size: 42px;
+  margin: 10px;
+  text-shadow: 1px 1px white;
+}
+.units {
+  font-size: 18px;
+  position: relative;
+  top: -18px;
+}
+.card {
+  margin: 10px;
+  border-radius: 12px;
+  background-color: rgb(184, 194, 204);
+}
+
+.btn {
+  color: black;
+}
+
+.row {
+  margin: 10px;
+}
+.col {
+  text-align: center;
+}
+.temp-today,
+.city,
+.date,
+.weather {
+  text-align: left;
+}
+.fa-sun {
+  margin: 40px;
+}
+
+.fa-droplet,
+.fa-wind,
+.fa-cloudscale,
+.fa-shirt {
+  font-size: 30px;
+  margin: 15px 0;
+  color: #46709b;
+}
+
+.fa-cloud,
+.fa-cloud-sun,
+.fa-cloud-rain {
+  font-size: 25px;
+  margin: 18px 0;
+  color: #46709b;
+}
+
+.font1 {
+  color: white;
+  text-shadow: 1px 1px #4c5358;
+}
+
+.font2 {
+  text-shadow: 1px 1px white;
+}
+.font3 {
+  color: #46709b;
+}
+
+h2.weather {
+  text-transform: capitalize;
+}
+.units {
+  text-decoration: none;
+}
+
+.units .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.units .active:hover {
+  text-decoration: none;
+}
+.weatherIcon {
+  margin: 13px 0;
+}
