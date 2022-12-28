@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import Search from "./Search";
 import Weather from "./Weather";
