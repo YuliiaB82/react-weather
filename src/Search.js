@@ -18,6 +18,7 @@ export default function Search() {
               className="form-control"
               placeholder="Enter a city name"
               id="enterCity"
+              autoFocus="on"
             />
           </div>
         </div>

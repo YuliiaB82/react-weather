@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className="App">
       <Search />
-      <Weather />
+      <Weather defaultCity="Stockholm" />
       <div className="card">
         <div className="row">
           <Card name={"Humidity"} icon={"fa-solid fa-droplet"} value={"86%"} />
