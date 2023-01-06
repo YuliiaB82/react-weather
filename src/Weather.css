@@ -52,9 +52,6 @@ span {
 .weather {
   text-align: left;
 }
-.fa-sun {
-  margin: 40px;
-}
 
 .fa-droplet,
 .fa-wind,
@@ -88,19 +85,13 @@ span {
 h2.weather {
   text-transform: capitalize;
 }
-.units {
-  text-decoration: none;
-}
 
-.units .active {
+.units {
   color: black;
   cursor: default;
-  text-decoration: none;
 }
 
-.units .active:hover {
-  text-decoration: none;
-}
 .weatherIcon {
-  margin: 13px 0;
+  margin: 40px 0;
+  width: 120px;
 }

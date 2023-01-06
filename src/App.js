@@ -1,17 +1,15 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
-import Search from "./Search";
 import Weather from "./Weather";
 import Card from "./Card";
 
 export default function App() {
   return (
     <div className="App">
-      <Search />
       <Weather defaultCity="Stockholm" />
       <div className="card">
         <div className="row">
-          <Card name={"Humidity"} icon={"fa-solid fa-droplet"} value={"86%"} />
+          <Card name={"Humidity"} icon={"fa-solid fa-droplet"} value={"89%"} />
           <Card
             name={"Wind"}
             icon={"fa-brands fa-cloudscale"}
