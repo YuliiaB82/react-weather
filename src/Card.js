@@ -8,8 +8,8 @@ export default function Card(props) {
       <br />
       <i className={props.icon}></i>
       <br />
-      <span className="font2" id="humidity">
-        {props.value}
+      <span className="font2">
+        {props.data} {props.value}
       </span>
     </div>
   );

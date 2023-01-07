@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
+import Card from "./Card";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -13,7 +14,9 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
-      wind: response.data.wind.speed,
+      wind: Math.round(response.data.wind.speed),
+      feels_like: Math.round(response.data.main.feels_like),
+      pressure: response.data.main.pressure,
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       icon: response.data.weather[0].icon,
@@ -69,6 +72,35 @@ export default function Weather(props) {
         </form>
 
         <WeatherInfo data={weatherData} />
+
+        <div className="card">
+          <div className="row">
+            <Card
+              name={"Humidity"}
+              icon={"fa-solid fa-droplet"}
+              value="%"
+              data={weatherData.humidity}
+            />
+            <Card
+              name={"Wind"}
+              icon={"fa-solid fa-wind"}
+              value="km/h"
+              data={weatherData.wind}
+            />
+            <Card
+              name={"Pressure"}
+              icon={"fa-brands fa-cloudscale"}
+              value="hPa"
+              data={weatherData.pressure}
+            />
+            <Card
+              name={"Feels like"}
+              icon={"fa-solid fa-shirt"}
+              value="°C"
+              data={weatherData.feels_like}
+            />
+          </div>
+        </div>
       </div>
     );
   } else {
