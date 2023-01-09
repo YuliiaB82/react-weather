@@ -37,7 +37,8 @@ span {
 }
 
 .btn {
-  color: black;
+  color: white;
+  background-color: ;
 }
 
 .row {
@@ -91,4 +92,7 @@ h2.weather {
 
 .weatherIcon {
   margin: 64px 14px;
+}
+.search-form {
+  margin-left: 40px;
 }
