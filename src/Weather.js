@@ -39,24 +39,6 @@ export default function Weather(props) {
     axios.get(apiUrl).then(handleResponse);
   }
 
-  function handleLoc(event) {
-    event.preventDefault();
-    searchLocation();
-  }
-  function getLocation(event) {
-    event.preventDefault();
-    searchLocation();
-  }
-
-  function searchLocation() {
-    let apiKey = "e6c2364656962bdcb16bc352fc42569a";
-    let latitude = props.coordinates.lat;
-    let longitude = props.coordinates.lon;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-
-    axios.get(apiUrl).then(handleResponse);
-  }
-
   if (weatherData.ready) {
     return (
       <div className="Weather">
@@ -65,10 +47,7 @@ export default function Weather(props) {
             <div className="col">
               <div className="loc">
                 <button id="location-btn" className="btn btn-secondary">
-                  <i
-                    className="fa-solid fa-location-dot"
-                    onChange={getLocation}
-                  />
+                  <i className="fa-solid fa-location-dot" />
                 </button>
               </div>
             </div>
