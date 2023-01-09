@@ -24,6 +24,8 @@ export default function TemperatureCard(props) {
                   <TemperatureDay data={dailyForecast} />
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>
