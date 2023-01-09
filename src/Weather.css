@@ -62,11 +62,8 @@ span {
   color: #46709b;
 }
 
-.fa-cloud,
-.fa-cloud-sun,
-.fa-cloud-rain {
-  font-size: 25px;
-  margin: 18px 0;
+.fa-icon {
+  margin: 15px 0 10px 0;
   color: #46709b;
 }
 
@@ -80,6 +77,7 @@ span {
 }
 .font3 {
   color: #46709b;
+  margin-left: 5px;
 }
 
 h2.weather {

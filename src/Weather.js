@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
-import Card from "./Card";
+import WeatherCard from "./WeatherCard";
+import TemperatureCard from "./TemperatureCard";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -11,6 +12,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
@@ -37,6 +39,24 @@ export default function Weather(props) {
     axios.get(apiUrl).then(handleResponse);
   }
 
+  function handleLoc(event) {
+    event.preventDefault();
+    searchLocation();
+  }
+  function getLocation(event) {
+    event.preventDefault();
+    searchLocation();
+  }
+
+  function searchLocation() {
+    let apiKey = "e6c2364656962bdcb16bc352fc42569a";
+    let latitude = props.coordinates.lat;
+    let longitude = props.coordinates.lon;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(handleResponse);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
@@ -45,7 +65,10 @@ export default function Weather(props) {
             <div className="col">
               <div className="loc">
                 <button id="location-btn" className="btn btn-secondary">
-                  <i className="fa-solid fa-location-dot"></i>
+                  <i
+                    className="fa-solid fa-location-dot"
+                    onChange={getLocation}
+                  />
                 </button>
               </div>
             </div>
@@ -75,30 +98,35 @@ export default function Weather(props) {
 
         <div className="card">
           <div className="row">
-            <Card
+            <WeatherCard
               name={"Humidity"}
               icon={"fa-solid fa-droplet"}
               value="%"
               data={weatherData.humidity}
             />
-            <Card
+            <WeatherCard
               name={"Wind"}
               icon={"fa-solid fa-wind"}
               value="km/h"
               data={weatherData.wind}
             />
-            <Card
+            <WeatherCard
               name={"Pressure"}
               icon={"fa-brands fa-cloudscale"}
               value="hPa"
               data={weatherData.pressure}
             />
-            <Card
+            <WeatherCard
               name={"Feels like"}
               icon={"fa-solid fa-shirt"}
               value="°C"
               data={weatherData.feels_like}
             />
+          </div>
+        </div>
+        <div className="card">
+          <div className="row">
+            <TemperatureCard size={20} coordinates={weatherData.coordinates} />
           </div>
         </div>
       </div>
